@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+
+<defs>
+</defs>
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+	<circle cx="45" cy="45" r="45" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,132,53); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+	<path d="M 74.592 41.834 C 72.061 26.24 57.315 15.616 41.721 18.146 c -1.547 0.251 -3.054 0.63 -4.519 1.12 l -4.431 -6.814 c -0.332 -0.511 -0.938 -0.768 -1.537 -0.656 c -0.598 0.113 -1.068 0.577 -1.19 1.173 l -3.47 16.985 c -0.16 0.786 0.325 1.559 1.103 1.755 l 17.367 4.384 c 0.122 0.031 0.245 0.045 0.367 0.045 c 0.477 0 0.934 -0.228 1.22 -0.627 c 0.359 -0.502 0.374 -1.173 0.037 -1.69 l -4.306 -6.621 c 0.268 -0.055 0.531 -0.126 0.802 -0.17 c 10.69 -1.734 20.808 5.552 22.545 16.247 c 1.736 10.694 -5.553 20.808 -16.248 22.545 c -8.293 1.341 -16.526 -2.725 -20.484 -10.132 c -1.17 -2.192 -3.898 -3.021 -6.089 -1.848 c -2.192 1.171 -3.02 3.897 -1.848 6.09 c 5.036 9.424 14.815 15.146 25.26 15.146 c 1.524 0 3.064 -0.122 4.605 -0.373 C 66.497 72.173 77.124 57.427 74.592 41.834 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+	<ellipse cx="20.436" cy="41.716" rx="6.186" ry="6.186" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(0.7071 -0.7071 0.7071 0.7071 -23.5118 26.6652) "/>
+</g>
+</svg>
