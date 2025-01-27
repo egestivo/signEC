@@ -11,7 +11,7 @@ class ReceptiveSkillTest:
         self.main_app = main_app
         self.running = False
         self.score = 0
-        self.timer = 60  # Total time including preparation time
+        self.timer = 60 
         self.model = YOLO("best.pt")
         self.cap = None
         self.letter_to_match = ""
@@ -19,43 +19,43 @@ class ReceptiveSkillTest:
         self.remaining_time_for_letter = 10
 
     def start_test(self):
-        # Hide the main window
+        #Esconder ventana principal 
         self.main_app.root.withdraw()
 
-        # Create the challenge window
+        #Abrimos ventana del desafío
         self.challenge_window = Toplevel()
         self.challenge_window.title("RECEPTIVE SKILL TEST")
         self.challenge_window.geometry("1500x832")
         self.challenge_window.protocol("WM_DELETE_WINDOW", self.end_test)
 
-        # Canvas for camera
+        #Espacio de cámara
         self.canvas = Canvas(self.challenge_window, bg="#D9D9D9", width=640, height=480)
         self.canvas.place(x=50, y=150)
 
-        # Score label
+        #Puntaje
         self.score_label = Label(
             self.challenge_window, text="Puntaje: 0", font=("Arial", 24)
         )
         self.score_label.place(x=750, y=150)
 
-        # Letter label
+        #Letra aleatoria
         self.letter_label = Label(
             self.challenge_window, text="", font=("Arial", 48), fg="blue"
         )
         self.letter_label.place(x=750, y=300)
 
-        # Preparation label
+        #Preparación tiempo
         self.preparation_label = Label(
             self.challenge_window, text="Prepárate...", font=("Arial", 36), fg="red"
         )
         self.preparation_label.place(x=750, y=400)
 
-        # Start the camera
+        #Inicia la cámara
         self.cap = cv2.VideoCapture(0)
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-        # Start the test
+        #Inicia el test
         self.running = True
         self.update_camera()
         self.challenge_window.after(1000, self.update_timer)
@@ -74,10 +74,10 @@ class ReceptiveSkillTest:
             self.canvas.create_image(0, 0, anchor="nw", image=imgtk)
             self.canvas.imgtk = imgtk
 
-            # Run YOLO model
+            #hacer la predicción según el modelo YOLO best.pt
             results = self.model.predict(source=frame, stream=True)
             for result in results:
-                if result.boxes:  # Check for detections
+                if result.boxes:  #Si hay detección entonces...
                     detected_letter = self.model.names[int(result.boxes.cls[0])]
                     if detected_letter == self.letter_to_match:
                         self.score += 1
@@ -111,7 +111,7 @@ class ReceptiveSkillTest:
             self.cap.release()
             self.cap = None
 
-        # Determine feedback message
+        #Mensaje de retroalimentación xd (no le puse fracasado porque no me lo permiten :v)
         feedback = ""
         if self.score <= 2:
             feedback = "Vamos, puedes hacerlo mejor..."
@@ -120,7 +120,7 @@ class ReceptiveSkillTest:
         else:
             feedback = "¡Que CRACK!"
 
-        # Save the score
+        #guarda el puntajeceems
         name = simpledialog.askstring("Finalizado", f"{feedback}\nIngresa tu nombre:")
         if name:
             count = len([f for f in os.listdir('SignEc-resultados-palabras-y-tests') if os.path.isfile(os.path.join('SignEc-resultados-palabras-y-tests', f))]) + 1
@@ -128,6 +128,6 @@ class ReceptiveSkillTest:
             with open(filename, "w") as file:
                 file.write(f"Nombre: {name}\nPuntaje: {self.score}/5\nMensaje: {feedback}\n")
 
-        # Close the challenge window and show the main window again
+        # cierra el desafio y abre nuevamente la ventana inicial
         self.challenge_window.destroy()
         self.main_app.root.deiconify()
