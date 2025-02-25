@@ -203,6 +203,7 @@ class SignDetectionApp:
             if current_time - self.last_detection_time > self.detection_delay:
                 results = self.model.predict(source=frame, stream=True)
                 for result in results:
+                    frame_with_detections = result.plot()
                     if result.boxes:  #si hay detección entonces...
                         self.last_detection_time = current_time
                         detected_letter = self.model.names[int(result.boxes.cls[0])]
